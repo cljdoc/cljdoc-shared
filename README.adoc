@@ -1,0 +1,23 @@
+= cljdoc-shared
+
+[Important]
+====
+This is an internal cljdoc library. +
+It is not a general purpose library.
+====
+
+This small collection of cljdoc code and specs is used by:
+
+* `cljdoc`
+* `cljdoc-analyzer`
+* `builder` - does not use, but duplicates `cljdoc-shared/analysis/output-prefix` in CI config
+
+[Important]
+====
+To reduce the maintenance burden:
+
+* This code must remain minimal.
+* Don't add things that might be used in the future.
+* Delete things that are no longer commonly used.
+* Be very reluctant to adding dependencies.
+====

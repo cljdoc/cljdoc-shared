@@ -1,0 +1,5 @@
+{:deps {org.jsoup/jsoup {:mvn/version "1.14.3"}}
+ :aliases {:test
+           {:extra-paths ["test"]
+            :extra-deps {lambdaisland/kaocha {:mvn/version "1.62.993"}}
+            :main-opts ["-m" "kaocha.runner"]}}}
