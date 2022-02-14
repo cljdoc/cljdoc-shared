@@ -68,7 +68,7 @@
 
 (defn parse [pom-str]
   (let [d (Jsoup/parse pom-str)]
-    {:scm (scm-info d)
+    {:scm-info (scm-info d)
      :artifact-info (artifact-info d)
      :dependencies (dependencies-with-versions d)
      :repositories (repositories d)}))
