@@ -1,9 +1,11 @@
-version: 2.1
+version: 2
 
 jobs:
   test:
     docker:
       - image: circle/clojure:openjdk-11-tools-deps-1.10.3-1058-buster
+
+    working-directory: ~/repo
 
     steps:
       - checkout
