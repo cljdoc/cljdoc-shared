@@ -2,9 +2,6 @@
   (:refer-clojure :exclude [assert])
   (:require [clojure.spec.alpha :as s]))
 
-;; TODO: while testing leave this on
-(s/check-asserts true)
-
 (s/def ::platform #{"clj" "cljs"})
 
 ;; analysis -------------------------------------------------------------
