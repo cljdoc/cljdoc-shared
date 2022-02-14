@@ -2,4 +2,14 @@
  :aliases {:test
            {:extra-paths ["test"]
             :extra-deps {lambdaisland/kaocha {:mvn/version "1.62.993"}}
-            :main-opts ["-m" "kaocha.runner"]}}}
+            :main-opts ["-m" "kaocha.runner"]}
+
+           :clj-kondo
+           {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2022.02.09"}}
+            :main-opts ["-m" "clj-kondo.main"]}
+
+           :outdated
+           {:replace-deps {com.github.liquidz/antq {:mvn/version "1.5.0"}
+                           org.slf4j/slf4j-simple {:mvn/version "1.7.36"} ;; to rid ourselves of logger warnings
+                           }
+            :main-opts ["-m" "antq.core"]}}}

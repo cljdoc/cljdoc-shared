@@ -1,0 +1,49 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circle/clojure:openjdk-11-tools-deps-1.10.3-1058-buster
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{checksum "deps.edn"}}
+            - v1-dependencies- # fallback if cache not found
+
+      - run:
+          name: Install babashka
+          command: |
+            sudo bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+
+      - run:
+          name: Dump tools versions
+          command: |
+            echo bb --version
+            bb --version
+            echo clojure -Sdescribe
+            clojure -Sdescribe
+            echo java -version
+            java -version
+
+      - run:
+          name: Bring down Clojure deps
+          command: |
+            clojure -P -M:test
+
+      - run:
+          name: Lint
+          command: |
+            bb lint
+
+      - run:
+          name: Test
+          command: |
+            bb test
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{checksum "deps.edn"}}
