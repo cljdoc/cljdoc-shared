@@ -1,7 +1,6 @@
 version: 2
-
 jobs:
-  test:
+  build:
     docker:
       - image: circle/clojure:openjdk-11-tools-deps-1.10.3-1058-buster
 
