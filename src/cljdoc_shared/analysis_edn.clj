@@ -4,6 +4,8 @@
             [clojure.walk :as walk]))
 
 (defn serialize
+  ;; NOTE: This fn is currently duped in cljdoc-analyzer.metagetta.utils/serialize-cljdoc-analysis-edn
+  ;; to minimize deps to metagetta
   "Return string serialized analysis result from `analysis-result`"
   [analysis-result]
   ;; the analyzed structure can contain regex #"..." (e.g. in :arglists)

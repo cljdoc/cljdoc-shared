@@ -10,7 +10,7 @@
 (defn result-file
   [project version]
   {:pre [(some? project) (string? version)]}
-  (str "cljdoc-edn/" (proj/group-id project) "/" (proj/artifact-id project) "/" version "/cljdoc.edn"))
+  (str "cljdoc-analysis-edn/" (proj/group-id project) "/" (proj/artifact-id project) "/" version "/cljdoc-analysis.edn"))
 
 (defn result-path
   [project version]
