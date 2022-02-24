@@ -2,12 +2,12 @@
   (:require [clojure.test :as t]
             [cljdoc-shared.analysis-edn :as analysis-edn]))
 
-(t/deftest serialize-cldoc-edn-test
+(t/deftest serialize
   (t/is (= "{:regex-test #regex \".*booya.*\"}" (analysis-edn/serialize {:regex-test #".*booya.*"})))
   (t/is (= "{:i {:am {:deeper {:yes #regex \"(ok|good)\", :other-stuff \"bingo\"}}}}"
            (analysis-edn/serialize {:i {:am {:deeper {:yes #"(ok|good)" :other-stuff "bingo"}}}}))))
 
-(t/deftest deserialize-cljdoc-edn-test
+(t/deftest deserialize
   ;; we convert to string because in clojure: (= #"booya" #"booya") evals to false but (= (str #"booya") (str #"booya")) evals to true
   (t/is (= (str {:regex-test #".*booya.*"})
            (str (analysis-edn/deserialize "{:regex-test #regex \".*booya.*\"}"))))

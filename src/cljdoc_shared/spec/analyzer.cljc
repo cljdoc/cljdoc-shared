@@ -35,22 +35,22 @@
           :opt-un [:cljdoc.analysis.namespace/doc]))
 
 
-;; api analysis produced cljdoc.edn ---------------------------------------------------------
+;; api analysis from cljdoc-analyzer produced cljdoc-analysis.edn ---------------------------------------------------------
 ;; (not the user's repo cljdoc.edn)
 
-(s/def :cljdoc.cljdoc-edn/analysis
+(s/def :cljdoc.cljdoc-anlaysis-edn/analysis
   (s/map-of ::platform (s/coll-of :cljdoc.analysis/namespace)))
 
-(s/def :cljdoc.cljdoc-edn/pom-str string?)
+(s/def :cljdoc.cljdoc-analysis-edn/pom-str string?)
 
-(s/def :cljdoc/cljdoc-edn
-  (s/keys :req-un [:cljdoc.cljdoc-edn/analysis
-                   :cljdoc.cljdoc-edn/pom-str]))
+(s/def :cljdoc/cljdoc-analysis-edn
+  (s/keys :req-un [:cljdoc.cljdoc-analysis-edn/analysis
+                   :cljdoc.cljdoc-analysis-edn/pom-str]))
 
 ;; Publicly used asssertions:
 
 (defn assert-result-namespaces [v]
-  (s/assert :cljdoc.cljdoc-edn/analysis v))
+  (s/assert :cljdoc.cljdoc-analysis-edn/analysis v))
 
 (defn assert-result-full [v]
-  (s/assert :cljdoc/cljdoc-edn v))
+  (s/assert :cljdoc/cljdoc-analysis-edn v))
