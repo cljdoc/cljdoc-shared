@@ -1,8 +1,9 @@
-version: 2
+version: 2.1
+
 jobs:
   build:
     docker:
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.3.1058-buster
+      - image: clojure:temurin-21-tools-deps-jammy
 
     working-directory: ~/repo
 
