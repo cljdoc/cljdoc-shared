@@ -1,15 +1,15 @@
-{:deps {org.jsoup/jsoup {:mvn/version "1.17.2"}}
+{:deps {org.jsoup/jsoup {:mvn/version "1.18.1"}}
  :aliases {:test
            {:extra-paths ["test"]
-            :extra-deps {lambdaisland/kaocha {:mvn/version "1.88.1376"}}
+            :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
             :main-opts ["-m" "kaocha.runner"]}
 
            :clj-kondo
-           {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2024.03.13"}}
+           {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2024.09.27"}}
             :main-opts ["-m" "clj-kondo.main"]}
 
            :outdated
-           {:replace-deps {com.github.liquidz/antq {:mvn/version "2.8.1194"}
-                           org.slf4j/slf4j-simple {:mvn/version "2.0.13"} ;; to rid ourselves of logger warnings
+           {:replace-deps {com.github.liquidz/antq {:mvn/version "2.10.1241"}
+                           org.slf4j/slf4j-simple {:mvn/version "2.0.16"} ;; to rid ourselves of logger warnings
                            }
             :main-opts ["-m" "antq.core"]}}}
