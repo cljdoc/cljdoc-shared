@@ -1,4 +1,4 @@
-{:deps {org.jsoup/jsoup {:mvn/version "1.19.1"}}
+{:deps {org.jsoup/jsoup {:mvn/version "1.21.2"}}
  :aliases {:test
            {:extra-paths ["test"]
             :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
