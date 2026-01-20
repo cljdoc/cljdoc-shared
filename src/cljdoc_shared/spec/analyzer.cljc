@@ -1,5 +1,4 @@
 (ns ^:no-doc cljdoc-shared.spec.analyzer
-  (:refer-clojure :exclude [assert])
   (:require [clojure.spec.alpha :as s]))
 
 (s/def ::platform #{"clj" "cljs"})
