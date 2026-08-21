@@ -5,7 +5,7 @@
             :main-opts ["-m" "kaocha.runner"]}
 
            :clj-kondo
-           {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2026.04.15" }}
+           {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2026.08.04" }}
             :main-opts ["-m" "clj-kondo.main"]}
 
            :outdated
